@@ -1,6 +1,15 @@
 
 import Hero from '~/components/Car/Hero.vue';
 
+<script setup lang="ts">
+useHead({
+  title: "Car trader",
+});
+</script>
+
 <template>
-  <CarHero/>
+  <div>
+    <NavBar />
+    <CarHero />
+  </div>
 </template>
