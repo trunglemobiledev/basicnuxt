@@ -14,10 +14,16 @@ const updateModal = (key: any) => {
 };
 
 const onChangeLocation = () => {
-  if(!city.value) return;
-  updateModal("location")
+  if (!city.value) return;
+  if (!isNaN(parseInt(city.value))) {
+    throw createError({
+      statusCode: 400,
+      message: "Invalid city format",
+    });
+  }
+  updateModal("location");
   navigateTo(`/city/${city.value}/car/${route.params.make}`);
-  city.value = ''
+  city.value = "";
 };
 </script>
 
